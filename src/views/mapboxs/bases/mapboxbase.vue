@@ -32,8 +32,8 @@ export default {
 
   methods: {
     async initMap(
-      layerUrl = "https://zlbkjzz.hzsgis.com:8090/C1DC5DAA62D342D7B5395525C7AD4BB96EB680B39B9DE1B4DA44307B9450FC5700C42E754F5CC4A6071252ECD95372D8/PBS/rest/services/hzsyvectortile/VectorTileMapServer/hzNormal.json"
-      // "https://zlbkjzz.hzsgis.com:8090/C1DC5DAA62D342D7B5395525C7AD4BB96EB680B39B9DE1B4DA44307B9450FC5700C42E754F5CC4A6071252ECD95372D8/PBS/rest/services/hzsyvectorcache/VectorTileMapServer/hz_dark.json"
+      layerUrl = "https://1.1.1.1:8090/C1DC5DAA62D342D7B5395525C7AD4BB96EB680B39B9DE1B4DA44307B9450FC5700C42E754F5CC4A6071252ECD95372D8/PBS/rest/services/hzsyvectortile/VectorTileMapServer/hzNormal.json"
+      // "https://1.1.1.1:8090/C1DC5DAA62D342D7B5395525C7AD4BB96EB680B39B9DE1B4DA44307B9450FC5700C42E754F5CC4A6071252ECD95372D8/PBS/rest/services/hzsyvectorcache/VectorTileMapServer/hz_dark.json"
     ) {
       var self = this;
       await axios
@@ -56,16 +56,16 @@ export default {
         maxzoom: 16,
         style: {
           sprite:
-            "https://zlbkjzz.hzsgis.com:8090/74BE05BE36C461F08EA7859024C39F066FB514275DED0D9FAC4CE1BAED6D92EC9529582104A0FB7853D7FF676462FB40/PBS/rest/services/hzsyvectorcache/VectorTileMapServer/sprite", //检索子画面图片和元数据
+            "https://1.1.1.1:8090/74BE05BE36C461F08EA7859024C39F066FB514275DED0D9FAC4CE1BAED6D92EC9529582104A0FB7853D7FF676462FB40/PBS/rest/services/hzsyvectorcache/VectorTileMapServer/sprite", //检索子画面图片和元数据
           glyphs:
-            "https://zlbkjzz.hzsgis.com:8090/74BE05BE36C461F08EA7859024C39F066FB514275DED0D9FAC4CE1BAED6D92EC9529582104A0FB7853D7FF676462FB40/PBS/rest/services/hzsyvectorcache/VectorTileMapServer/Droid Sans Fallback I Regular/{fontstack}/{range}.pbf", //字体的地址,以PBF格式加载有符号距离字段的字形集
+            "https://1.1.1.1:8090/74BE05BE36C461F08EA7859024C39F066FB514275DED0D9FAC4CE1BAED6D92EC9529582104A0FB7853D7FF676462FB40/PBS/rest/services/hzsyvectorcache/VectorTileMapServer/Droid Sans Fallback I Regular/{fontstack}/{range}.pbf", //字体的地址,以PBF格式加载有符号距离字段的字形集
           version: 8,
           layers: self.mapboxLayers,
           sources: {
             geojsonlayer: {
               type: "raster",
               tiles: [
-                "http://172.18.33.198:6080/arcgis/rest/services/hbzy/MapServer/export?dpi=96&transparent=true&format=png8&layers=show:4&bbox={bbox-epsg-4490}&bboxSR=4490&imageSR=4490&f=image",
+                "http://1.1.1.1:6080/arcgis/rest/services/hbzy/MapServer/export?dpi=96&transparent=true&format=png8&layers=show:4&bbox={bbox-epsg-4490}&bboxSR=4490&imageSR=4490&f=image",
               ],
               tileSize: 256,
               bounds: [
@@ -97,13 +97,13 @@ export default {
             xvvc: {
               type: "vector",
               tiles: [
-                "https://zlbkjzz.hzsgis.com:8090/74BE05BE36C461F08EA7859024C39F066FB514275DED0D9FAC4CE1BAED6D92EC9529582104A0FB7853D7FF676462FB40/PBS/rest/services/hzsyvectorcache/VectorTileMapServer/{z}/{x}/{y}",
+                "https://1.1.1.1:8090/74BE05BE36C461F08EA7859024C39F066FB514275DED0D9FAC4CE1BAED6D92EC9529582104A0FB7853D7FF676462FB40/PBS/rest/services/hzsyvectorcache/VectorTileMapServer/{z}/{x}/{y}",
               ],
             },
             worldimage: {
               type: "raster",
               tiles: [
-                "https://zlbkjzz.hzsgis.com:8094/citybrain/service?LAYERS=raster&SRS=EPSG%3A4326&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&STYLES=&" +
+                "https://1.1.1.1:8094/citybrain/service?LAYERS=raster&SRS=EPSG%3A4326&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&STYLES=&" +
                   "&bbox={bbox-epsg-4490}" +
                   "&BGCOLOR=f27c58" + //生成的图片背景颜色
                   "&TRANSPARENT=TRUE" +
@@ -115,7 +115,7 @@ export default {
             worldmap: {
               type: "raster",
               tiles: [
-                "https://zlbkjzz.hzsgis.com:8094/citybrain/service?LAYERS=vector&SRS=EPSG%3A4326&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&STYLES=&" +
+                "https://1.1.1.1:8094/citybrain/service?LAYERS=vector&SRS=EPSG%3A4326&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&STYLES=&" +
                   "&bbox={bbox-epsg-4490}" +
                   "&BGCOLOR=f27c58" + //生成的图片背景颜色
                   "&TRANSPARENT=TRUE" +
@@ -128,13 +128,13 @@ export default {
             cvvx: {
               type: "vector", //vector, raster, raster-dem, geojson, video, image
               tiles: [
-                "https://zlbkjzz.hzsgis.com:8090/C1DC5DAA62D342D7B5395525C7AD4BB96EB680B39B9DE1B4DA44307B9450FC5700C42E754F5CC4A6071252ECD95372D8/PBS/rest/services/hzsyvectortile/VectorTileMapServer/{z}/{x}/{y}",
+                "https://1.1.1.1:8090/C1DC5DAA62D342D7B5395525C7AD4BB96EB680B39B9DE1B4DA44307B9450FC5700C42E754F5CC4A6071252ECD95372D8/PBS/rest/services/hzsyvectortile/VectorTileMapServer/{z}/{x}/{y}",
               ],
             },
             hzsyvectorcache: {
               type: "raster", //vector, raster, raster-dem, geojson, video, image
               tiles: [
-                "https://zlbkjzz.hzsgis.com:8090/C1DC5DAA62D342D7B5395525C7AD4BB96EB680B39B9DE1B4DA44307B9450FC5700C42E754F5CC4A6071252ECD95372D8/PBS/rest/services/hzsyvectorcache/VectorTileMapServer/{z}/{y}/{x}",
+                "https://1.1.1.1:8090/C1DC5DAA62D342D7B5395525C7AD4BB96EB680B39B9DE1B4DA44307B9450FC5700C42E754F5CC4A6071252ECD95372D8/PBS/rest/services/hzsyvectorcache/VectorTileMapServer/{z}/{y}/{x}",
               ],
               //切片的图片大小
               tileSize: 256,
