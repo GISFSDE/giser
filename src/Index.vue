@@ -3,25 +3,13 @@
     <el-header>GISER HOME</el-header>
     <el-main
       ><el-row :gutter="20">
-        <el-col :span="6"
-          ><div class="grid-content bg-purple">LEAFLET</div></el-col
+        <el-col :span="6" v-for="(item, i) in options" :key="i"
+          ><div class="grid-content bg-purple" @click="openOption(item.value)">
+            {{ item.name }}
+          </div></el-col
         >
-        <el-col :span="6"
-          ><div class="grid-content bg-purple">MAPBOX</div></el-col
-        >
-        <el-col :span="6"
-          ><div class="grid-content bg-purple">CESIUM</div></el-col
-        >
-        <el-col :span="6"
-          ><div class="grid-content bg-purple">OTHERS</div></el-col
-        >
-        <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-        <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-        <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-        <el-col :span="6"
-          ><div class="grid-content bg-purple"></div
-        ></el-col> </el-row
-    ></el-main>
+      </el-row></el-main
+    >
     <el-footer>Footer</el-footer>
   </el-container>
 </template>
@@ -31,8 +19,19 @@ export default {
   name: "HelloWorld",
   data() {
     return {
-      msg: "Welcome to Your Vue.js App",
+      msg: "Welcome!Giser!",
+      options: [
+        { name: "LEAFLET", value: "leaflet" },
+        { name: "MAPBOX", value: "mapbox" },
+        { name: "CESIUM", value: "cesium" },
+        { name: "OTHERS", value: "others" },
+      ],
     };
+  },
+  methods: {
+    openOption(option) {
+      this.$router.push(option + "base");
+    },
   },
 };
 </script>
