@@ -2,29 +2,21 @@
 
 > A Vue.js project about Gis include mapbox、cesium、leaflet examples.
 
-## Build Setup
+# TODO
 
-``` bash
-# install dependencies
-npm install
+> ## GIS基础知识
+>
 
-# serve with hot reload at localhost:8080
-npm run dev
++ [ ] 坐标系
++ [ ] 数据格式
++ [ ] 
 
-# build for production with minification
-npm run build
+> ## Leaflet 案例大全
+>
 
-# build for production and view the bundle analyzer report
-npm run build --report
++ [ ] 基础组件
 
-# run unit tests
-npm run unit
+> ## Cesium 案例大全
+>
 
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
++ [ ] 基础组件
