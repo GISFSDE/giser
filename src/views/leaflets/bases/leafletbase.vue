@@ -35,11 +35,11 @@ export default {
       // 供而未用土地消化:
       // 低效用地再开发:
       mapUrls: [
-        "http://172.18.109.13:8083/512834d664a4d3407b4c18ba3e8b3b66373945ec/ArcGIS/MapService/Catalog/SDE.R2021_LSXZQH.gis",
-        "http://172.18.109.13:8083/512834d664a4d3407b4c18ba3e8b3b66373945ec/ArcGIS/MapService/Catalog/HZGIS.TDGY_ZPGCR.gis",
-        "http://172.18.109.13:8083/512834d664a4d3407b4c18ba3e8b3b66373945ec/ArcGIS/MapService/Catalog/SDE.R2022_PEWGXH.gis",
-        "http://172.18.109.13:8083/512834d664a4d3407b4c18ba3e8b3b66373945ec/ArcGIS/MapService/Catalog/SDE.R2022_GEWYXH.gis",
-        "http://172.18.109.13:8083/512834d664a4d3407b4c18ba3e8b3b66373945ec/ArcGIS/MapService/Catalog/SDE.R2022_DXYDZKF.gis",
+        "http://1.1.1.1:8083/512834d664a4d3407b4c18ba3e8b3b66373945ec/ArcGIS/MapService/Catalog/SDE.R2021_LSXZQH.gis",
+        "http://1.1.1.1:8083/512834d664a4d3407b4c18ba3e8b3b66373945ec/ArcGIS/MapService/Catalog/HZGIS.TDGY_ZPGCR.gis",
+        "http://1.1.1.1:8083/512834d664a4d3407b4c18ba3e8b3b66373945ec/ArcGIS/MapService/Catalog/SDE.R2022_PEWGXH.gis",
+        "http://1.1.1.1:8083/512834d664a4d3407b4c18ba3e8b3b66373945ec/ArcGIS/MapService/Catalog/SDE.R2022_GEWYXH.gis",
+        "http://1.1.1.1:8083/512834d664a4d3407b4c18ba3e8b3b66373945ec/ArcGIS/MapService/Catalog/SDE.R2022_DXYDZKF.gis",
       ],
       clickLayers: null,
     };
@@ -57,7 +57,7 @@ export default {
     },
   },
   //生命周期 - 创建完成（可以访问当前this实例）
-  created() {},
+  created() { },
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {
     var self = this;
@@ -137,7 +137,7 @@ export default {
 
     // let layer = L.layerGroup([
     //   esri.dynamicMapLayer({
-    //     url: "http://172.18.33.198:6080/arcgis/rest/services/hbzy/MapServer ",
+    //     url: "http://1.1.1.1:6080/arcgis/rest/services/hbzy/MapServer ",
     //     layers: [0],
     //   }),
     // ]);
@@ -195,9 +195,9 @@ export default {
       self.$axios
         .get(
           self.mapUrls[self.sourceType] +
-            "/query?where=" +
-            self.queryCondition +
-            "&f=json"
+          "/query?where=" +
+          self.queryCondition +
+          "&f=json"
         )
         .then((res) => {
           console.log("属性", res.data.features[0].attributes);
@@ -227,9 +227,9 @@ export default {
     console.log(
       "sourceUrl",
       self.mapUrls[self.sourceType] +
-        "/query?where=" +
-        self.queryCondition +
-        "&f=json"
+      "/query?where=" +
+      self.queryCondition +
+      "&f=json"
     );
 
     console.log("地图加载完成");
@@ -289,13 +289,13 @@ export default {
 
     console.log("usaDynamicLayer", usaDynamicLayer);
   },
-  beforeCreate() {}, //生命周期 - 创建之前
-  beforeMount() {}, //生命周期 - 挂载之前
-  beforeUpdate() {}, //生命周期 - 更新之前
-  updated() {}, //生命周期 - 更新之后
-  beforeDestroy() {}, //生命周期 - 销毁之前
-  destroyed() {}, //生命周期 - 销毁完成
-  activated() {}, //如果页面有keep-alive缓存功能，这个函数会触发
+  beforeCreate() { }, //生命周期 - 创建之前
+  beforeMount() { }, //生命周期 - 挂载之前
+  beforeUpdate() { }, //生命周期 - 更新之前
+  updated() { }, //生命周期 - 更新之后
+  beforeDestroy() { }, //生命周期 - 销毁之前
+  destroyed() { }, //生命周期 - 销毁完成
+  activated() { }, //如果页面有keep-alive缓存功能，这个函数会触发
 };
 </script>
 <style scoped>

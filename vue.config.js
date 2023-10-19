@@ -58,7 +58,7 @@ module.exports = {
                 pathRewrite: {  //这段要放在最前面
                     '/api': '/' //这样就可以把/api前缀去掉 从而正确访问后端地址
                 },
-                target: 'http://172.18.109.232:8080',//这是后台的地址
+                target: 'http://1.1.1.1:8080',//这是后台的地址
                 ws: true,
                 changOrigin: true,//允许跨域
             }
